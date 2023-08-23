@@ -1,0 +1,10 @@
+{
+  "name": "token-name-service-whitepaper",
+  "version": "1.0.0",
+  "description": "The whitepaper for the Token Name Service and the TKN DAO",
+  "scripts": {
+    "start": "npx serve -l 3333"
+  },
+  "author": "Kindnesss.eth",
+  "license": "ISC"
+}
