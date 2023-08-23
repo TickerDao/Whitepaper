@@ -1,0 +1,1098 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>TKN Whitepaper</title>
+        <link rel="icon" href="assets/img/favicon/favicon-32x32.png" type="image/x-icon" />
+
+        <link rel="icon" sizes="48x48" href="assets/img/favicon/icon-48.png">
+        <link rel="icon" sizes="96x96" href="assets/img/favicon/icon-96.png">
+        <link rel="icon" sizes="144x144" href="assets/img/favicon/icon-144.png">
+        <link rel="icon" sizes="192x192" href="assets/img/favicon/icon-192.png">
+        <link rel="icon" sizes="256x256" href="assets/img/favicon/icon-256.png">
+        <link rel="icon" sizes="384x384" href="assets/img/favicon/icon-384.png">
+        <link rel="icon" sizes="512x512" href="assets/img/favicon/icon-512.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon/apple-touch-icon-57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon/apple-touch-icon-60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon/apple-touch-icon-72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon/apple-touch-icon-76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon/apple-touch-icon-114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon/apple-touch-icon-120.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon/apple-touch-icon-152.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="assets/img/favicon/apple-touch-icon-167.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon-180.png">
+        <meta name="msapplication-TileImage" content="assets/img/favicon//ms-tile-144.png">
+
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link type="text/css" rel="stylesheet" href="assets/style.css" />
+        <link type="text/css" rel="stylesheet" href="assets/pilcrow.css" />
+        <link type="text/css" rel="stylesheet" href="assets/hljs-github.min.css" />
+
+        <style>
+            
+            @font-face {
+                font-family: 'LcdSolid';
+                src: url('./assets/fonts/LcdSolid.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'REM';
+                src: url('./assets/fonts/REM-VariableFont_wght.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Pixeloid-Bold';
+                src: url('./assets/fonts/PixeloidSansBold-RpeJo.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Pixeloid-Mono';
+                src: url('./assets/fonts/PixeloidSans-nR3g1.ttf') format('truetype');
+            }
+
+            .swp-title {
+                font-family: 'Pixeloid-Bold', monospace;
+                font-weight: 500;
+                font-size: 84px;
+                color: #000000;
+            }
+
+            @media (max-width: 600px) {
+                .swp-title {
+                    font-size: 56px; /* Adjust for smaller screens */
+                }
+            }
+
+            /* .swp-title {
+                font-family: 'REM', monospace;
+                font-weight: 500;
+                font-size: 88px;
+            } */
+            
+            .swp-body {
+                font-family: 'REM', monospace;
+                /* font-weight: 400; */
+                /* font-size: large; */
+            }
+
+            .ticker {
+                width: 100%;
+                overflow: hidden;
+                font-family: 'LcdSolid', monospace;
+            }
+
+            .ticker.positive {
+                color: green;
+            }
+
+            .ticker.negative {
+                color: red;
+            }
+
+            .ticker div {
+                white-space: nowrap;
+            }
+
+            .ticker.positive div {
+                animation: ticker-positive 30s linear infinite;
+            }
+
+            .ticker.negative div {
+                animation: ticker-negative 30s linear infinite;
+            }
+
+            @keyframes ticker-positive {
+                0% {
+                    transform: translateX(0%);
+                }
+
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+
+            @keyframes ticker-negative {
+                0% {
+                    transform: translateX(-100%);
+                }
+
+                100% {
+                    transform: translateX(0%);
+                }
+            }
+
+
+
+            /* Table */
+            table {
+                background-color: transparent;
+                border-collapse: collapse;
+                border-spacing: 0
+            }
+
+            td,
+            th {
+                border-right: 1px solid #dcdcdc;
+                padding: 8px 12px
+            }
+
+            td:last-child,
+            th:last-child {
+                border-right: 0
+            }
+
+            td {
+                border-top: 1px solid #dcdcdc
+            }
+
+            td.section-header {
+                border-top: 0;
+            }
+
+            th.recipients {
+                font-size: larger;
+            }
+
+            .table-wrapper {
+                position: absolute;
+                width: 100%;
+                left: 0;
+            }
+
+            .recipients {
+                width: 90%;
+                margin: auto;
+                /* 100% of the #table-wrapper div */
+                margin-bottom: 1000px;
+                max-width: 800px;
+            }
+
+            .airdrop-recipients {
+                width: 90%;
+                margin: auto;
+                /* 100% of the #table-wrapper div */
+                margin-bottom: 1000px;
+                max-width: 800px;
+            }
+
+            .allocations {
+                width: 90%;
+                margin: auto;
+                /* 100% of the #table-wrapper div */
+                /* margin-bottom: 1000px; */
+                max-width: 800px;
+            }
+
+            .toc-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+                margin-bottom: 32px;
+            }
+
+            @media (max-width: 460px) {
+                .toc-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+
+            .toc-button {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #f1f1f1;
+                border: 2px solid #ededed;
+                color: #333;
+                padding: 18px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 18px;
+                /* margin-top: 10px; */
+                /* margin-bottom: 10px; */
+                cursor: pointer;
+                border-radius: 10px;
+            }
+
+            .italic-caption {
+                font-style: italic;
+                color: darkgray
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="body-wrapper">
+            <h1 id="tkn-whitepaper">The Token Name Service</h1>
+            <!-- <p><em>Note: This whitepaper was 100% composed by Human Beings</em></p> -->
+            <h2 id="the-token-name-service"><a class="header-link" href="#the-token-name-service"></a>A single, global,
+                asset namespace</h2>
+            <p>
+            <div class="ticker positive">
+                <div id="tickers-positive"></div>
+            </div>
+            <div class="ticker negative">
+                <div id="tickers-negative"></div>
+            </div>
+            <p><i style="
+            font-size: large;
+            color: darkgray;
+            ">Live tickers from the TKN Registry</i></p>
+            </p>
+            <p>Imagine a single registry encompassing all of the tickers on earth. As builders and true believers in crypto's disruption of global finance, we must prepare for exponential tokenization
+                with
+                a predictable, composable, and community owned registry. An onchain registry to cure the fragmentation of both tradfi and crypto, while solving the problem of centralized token lists in DeFi.
+                This system must be so easy to use, that any
+                developer can query it. It must be simple enough that any PM can understand it. It must be reliable
+                enough
+                that it will run for multiple lifetimes, and it must be decentralized, so that it
+                always
+                helps the little guy.</p>
+            <p>It's time to build an overlooked but crucial piece of the defi stack, together.</p>
+            <h2 id="problems"><a class="header-link" href="#table-of-contents"></a>Table of Contents</h2>
+            <!-- <p>Skip ahead to:</p> -->
+            <div class="toc-grid">
+                <a class="toc-button" href="#overview">Overview</a>
+                <a class="toc-button" href="#protocol">Protocol</a>
+                <a class="toc-button" href="#technical-overview">Technical</a>
+                <a class="toc-button" href="#product">Product</a>
+                <a class="toc-button" href="#roadmap">Roadmap</a>
+                <a class="toc-button" href="#swp" style="font-family: 'Pixeloid-Bold'; font-size: 16px;">swp.eth</a>
+                <a class="toc-button" href="#growth">Growth</a>
+                <a class="toc-button" href="#dao">DAO</a>
+                <a class="toc-button" href="#the-case-for-tkn" style="display: flex; align-items: center; justify-content: center; padding: 16px 20px 16px 20px; font-size: 20px; font-family: 'LcdSolid', monospace;">$TKN</a>
+                <a class="toc-button" href="#airdrop">Airdrop</a>
+            </div>
+
+            <h1 id="overview"><a class="header-link" href="#overview"></a>Overview</h1>
+
+            <p></p>
+
+            <h2 id="what-is-the-token-name-service"><a class="header-link" href="#what-is-the-token-name-service"></a>What is the Token Name Service?</h2>
+            <p>TKN is a name service protocol for allocating token symbols onchain. Some well known token symbols include: <b><code>$BTC</code></b>, <b><code>$ETH</code></b>, and <b><code>$USDT</code></b>. Additionally, the protocol is tasked with maintaining accurate onchain metadata, and putting it all in the hands developers.</p>
+            
+            <h2 id="what-is-the-token-name-service"><a class="header-link" href="#what-is-the-token-name-service"></a>Why a Name Service for Tokens?</h2>
+            <p class="" style="font-family: 'Pixeloid-Mono'; font-size: 26px; color: rgb(47, 213, 28); text-align: center;">$OBJECT</p>
+            <p>Token symbols are a unique and exciting primitive, that can only reach their full potential as an ambitious decentralized protocol. </p>
+            <p>As a namespace, token symbols have unique needs compared to traditional domain names:</p>
+						<ul>
+       <li>Symbols are granted, not purchsed. The namespace serves developers and users instead of name owners primarily</li>
+                            <li>Empirical allocation criteria are required to prevent namespace pollution</li>
+                            <li>A security model is required to ensure metadata accuracy</li>
+						</ul>
+            <!-- <p></p> -->
+            <h4>What are the current industry shortcomings?</h4>
+            <ul>
+                <li>All apps currently use centralized token lists</li>
+                <li>Many protocols such as bridges and DEXes require a centralized Coingecko or CEX listing as a prerequisite
+                    for
+                    token inclusion</li>
+                <li>Scammers can easily impersonate legitimate tokens with duplicate tickers</li>
+                <li>The token landscape is currently fractured among many tools and ecosystems. Few developers
+                    incorporate
+                    the entire dataset.</li>
+                <!-- <li>Something about token data APIs can rug at any time, and are not a truly first class protocol for
+                    applications to build with.</li>
+                <li>Any token metadata available is managed by centralized, capricious actors</li>
+                <li>Centralized Token Lists can be censored by both internal and external actors</li>
+                <li>Duplicate tickers reduce certainty and make the ecosystem look amateurish</li> -->
+            </ul>
+
+
+            <h4>The DeFi stack</h4>
+
+            <img style="width: 100%; max-width: 600px;" src="https://gateway.tkn.xyz/ipfs/QmZ1knRpefSsMNWFijqjMe2zJ6Uv8vKhi7B8TuLvM7DZNS" >
+            <br>
+            <i class="italic-caption">DeFi Legos</i>
+            <br>
+            <p style="margin-top: 0.4em;">Decentralized finance is a stack of independent protocols that work in concert to create unstoppable financial infrastructure. The DeFi stack is a revolutionary achievement. <br>However, it has a remaining point of centralization: <b>the token list.</b></p>
+
+
+            <h2>Why is this important?</h2>
+            <p>Most centralization takes hold when the stakes are low; before its pernicious effects are felt. The network effects of centralization can take decades to overcome, if ever.</p>
+            <p>The DeFi stack
+ is only as strong as it's weakest layer. </p>
+            <h2>Accelerating Crypto Adoption</h2>
+            <p></p>
+            <h2>Completing the DeFi stack</h2>
+            <!-- <p>Without TKN </p> -->
+            <!-- <h4>Primary Directives</h4>
+            <ul>
+                <li>Serve developers: Should enhance the developer canvas, and serve as an industry standard for documentation.</li>
+            </ul> -->
+            
+            <!-- <h2 id="problems"><a class="header-link" href="#features"></a>Unique Features</h2> -->
+            <!-- <h2 id="the-token-name-service"><a class="header-link" href="#the-token-name-service">A single, global, asset namespace</a></h2> -->
+            <!-- (Consider making this an animated ticker tape banner) (or a globe that is composed of tickers like <a href="https://www.shutterstock.com/image-illustration/world-economies-stock-market-tickers-600w-68828851.jpg">https://www.shutterstock.com/image-illustration/world-economies-stock-market-tickers-600w-68828851.jpg</a>, or the matrix but it’s tickers) (maybe a defi puzzle with Tkn as the missing puzzle piece)</p> -->
+            <!-- <p>DeFi can not have a serious shot if duplicate tickers are allowed</p> -->
+
+
+
+            <!-- <h2 id="what-is-tkn"><a class="header-link" href="#what-is-tkn"></a>Abstract</h2>
+            <p>Unify all tickers under one powerful namespace</p>
+            <h2>Benefits that will be explained in the following sections</h2>
+            <p>benefits</p> -->
+            <p>In the following whitepaper we will cover</p>
+            <ul>
+                <li>How to wisely allocate scarce token symbols</li>
+                <li>How to expand the purview of crypto to global infrastructure</li>
+                <li>The technical foundations of the Token Name Service</li>
+                <li>The list of accompanying developer tools and end user products</li>
+                <li>The swp.eth "headless" DEX</li>
+                <li>Protocol and crypto industry growth objectives</li>
+                <li>The TKN DAO constitution, rules, and responsibilities.</li>
+                <li>$TKN pre-launch airdrop allocations</li>
+            </ul>
+              
+            <hr>
+
+            <h1 id="protocol"><a class="header-link" href="#protocol"></a>Protocol Overview</h1>
+            <h2 id="the-vision"><a class="header-link" href="#ticker-supply"></a>Ticker Symbol Supply</h2>
+            <p>Is a single namespace sufficient for all of global finance?</p>
+            <p><b>The following computes the available quantity of tickers:</b></p>
+
+            <p class="img-container"><img style="
+            max-width: 24em;
+            width: 100%;
+            " src="https://gateway.tkn.xyz/ipfs/QmV1nxTQVyPvWYVqeMDjAJhkt9ccKU7cGnDtafAehyRByd" alt="TKN Whitepaper">
+            </p>
+
+            <!-- <p><i>Available Token symbols calculation explained</i></p>
+<p class="img-container"><img width="350" src="https://gateway.tkn.xyz/ipfs/QmRKBfQrEedskcRGVria3aKFvUUeBNxszjo4SRE295QgAN" alt="TKN Whitepaper"></p> -->
+            <p style="color: darkgray"><i>Summation to compute the available quantity of token symbols</i></p>
+            <p>Available token symbols by ticker length:</p>
+            <p><i>c:</i> 1 - <b>26</b> tickers<br>
+                <i>c:</i> 2 - <b>676</b> tickers<br>
+                <i>c:</i> 3 - <b>17,576</b> tickers<br>
+                <i>c:</i> 4 - <b>456,976</b> tickers<br>
+                <i>c:</i> 5 - <b>11,881,376</b> tickers<br>
+                <i>c:</i> 6 - <b>308,915,776</b> tickers<br>
+                <i>c:</i> 7 - <b>8,031,810,176</b> tickers<br>
+                <i>c:</i> 8 - <b>208,827,064,576</b> tickers<br>
+                <i>c:</i> 9 - <b>5,429,503,700,000</b> tickers<br>
+                <i>c:</i> 10 - <b>141,167,100,000,000</b> tickers<br>
+            </p>
+
+            <p><b>The supply of token symbols is practically infinite:</b></p>
+            <p><i>Total Available Tickers</i></p>
+            <p class="img-container"><img width="150"
+                    src="https://gateway.tkn.xyz/ipfs/QmaJe2AR3wbhoG2ySzQgJSBBfpuLS2YUnoeNLWRCHTmxXx"
+                    alt="TKN Whitepaper-2"></p>
+
+            <p><i>Estimated number of Atoms in the known universe</i></p>
+            <p class="img-container"><img width="150"
+                    src="https://gateway.tkn.xyz/ipfs/QmQrU7CRfzWWYKEHoSxAuwH1tgSyWN4DRGW7rcDxqfUrBL"
+                    alt="TKN Whitepaper-2"></p>
+
+            <p><i>Current number of stocks, globally</i></p>
+            <p class="img-container"><img width="120"
+                    src="https://gateway.tkn.xyz/ipfs/QmfR7e83U2z5fVWhTfDg7VGTQsimXyuXa5PD7dECSt1HxY"
+                    alt="TKN Whitepaper-2"></p>
+
+            <p><i>Estimated current number of crypto assets</i></p>
+            <p class="img-container"><img width="150"
+                    src="https://gateway.tkn.xyz/ipfs/QmZ9i9Cn173oetHqeANPAEZRhM5KBaCfTWdmcXvSW4g9tb"
+                    alt="TKN Whitepaper-2"></p>
+			
+            <p>A single namespace is a virtually unlimited resource, and ample to power a global ticker protocol.</p>
+            <h2>Allocation Curve</h2>
+            <p>We've shown that a single namespace can support the world's assets, but how do we allocate scarce, shorter symbols?</p>
+            <p><b>The ticker allocation curve increases the listing criteria required as a namespace becomes more scarce, reserving symbols for important future assets.</b></p>
+            <img src="https://gateway.tkn.xyz/ipfs/QmPzhMVzZ43NzVNBZgxjuqdiPUJH1FCyve9bvwhgVEAJ61" style="width: 100%; max-width: 778px;" alt="Allocation Curve">
+            <br>
+            <p style="color: darkgray"><i>As symbols get more scarce, the Listing Criteria increases</i></p>
+            <p>For short, scarce, symbols, (<i>$XX</i>) the Listing Criteria will rise quickly. For longer, plentiful, symbols, (<i>$XXXXXXX+</i>) the listing criteria will rise more slowly or never.</p>
+            <h5>Notation:</h5>
+            <ul>
+                <li>Economic Upper Bound: Equal to the most valuable asset in the namespace during calculation.</li>
+                <li>Listing Threshold: A minimum initial curve value for scarce ticker lengths. <i>(1 & 2 character symbols)</i></li>
+                <li>Listing Criteria: Total asset value required to claim a symbol at that character length.</li>
+                <li><i>u</i> - Target Utilization: A defined target to reserve token space for strategic action. <i>(0.8 = 80% of the namespace is active in the curve.)</i></li>
+            </ul>
+
+            <p>The precise curve will be a function of the power law of token valuations.</p>
+
+
+            <h4>Godfathering</h4>
+			<p>All currently existing crypto projects above (10 mil mit cap?) will be granted their tickers regardless of fitness</p>
+			
+			<h4>Delisting Criteria</h4>
+            
+            <h4 id="ticker-upgrades"><a class="header-link" href="#ticker-upgrades"></a>Upgrading</h4>
+            <p>A token that starts out with a longer ticker, and increases in value is eligible to upgrade to a shorter, prestige ticker. For continuity, the entity will be allowed to retain it's former, longer, ticker.</p>
+
+            <h4>Non-ASCII characters</h4>
+            <p>Non-ASCII character normalization via <a href="https://github.com/ensdomains/docs/blob/master/ens-improvement-proposals/ensip-15-normalization-standard.md">ENSIP-15</a> unlocks additional supply and expressiveness in the TKN namespace.</p>
+
+            <h3 id="dataset"><a class="header-link" href="#dataset"></a>Dataset:</h3>
+            <p>Populate token data for projects worth &gt; 10MM
+                Populate upcoming datapoints as seen here: <a
+                    href="https://docs.tkn.xyz/developers/dataset#upcoming-datapoints">upcoming datapoints</a></p>
+
+            <h4>NOTICE: Submitting data</h4>
+            <p>Write something about the protocol for user submitted data, even if it is short</p>
+
+            <h4 id="protocol-goals"><a class="header-link" href="#protocol-goals"></a>Protocol Objectives</h4>
+            The power of a single, global, asset namespace is to elegantly deliver a snapshot of humanity's economic activity to a single developer's fingertips.
+            Now is the optimal time to launch 
+            a single, global, asset namespace. 
+            <p>Prevent ticker name collisions, which cause economic drag in the DeFi stack</p>
+
+
+            <h4 id="protocol-vision"><a class="header-link" href="#protocol-vision"></a>Protocol Vision</h4>
+            Put simply, to become the decentralized Standard &amp; Poor's (S&amp;P). To securely incorporate an expanding dataset. To disrupt the current financial caste system, and allow underprivileged projects access to capital markets and infrastructure.
+            <ul>
+                <li>Expand the scope of tracked assets </li>
+                <li>Expand the types of data tracked. Push the type scope outward to expand the secure dataset available to developers</li>
+            </ul>
+
+            <h4>STASHED, REMOVE</h4>
+            <p>Developers are forced to build applications that are limited to a single asset class, or a single geography. The power of a single, global, asset namespace
+                is that it allows developers to build applications used by anyone, anywhere, at any time. The current financial system is fragmented, and the data is siloed.
+               Only by crafting a single, global, asset namespace, can we  is to bring snapshots of human activity to developer's fingertips.
+   </p>
+            <p>Developers are forced to build applications that are limited to a single asset class, or a single geography. The power of a single, global, asset namespace
+                is that it allows developers to build applications used by anyone, anywhere, at any time. The current financial system is fragmented, and the data is siloed.
+               Only by crafting a single, global, asset namespace, can we  is to bring snapshots of human activity to developer's fingertips.
+   </p>
+
+            (Maybe put something about how Economic Upper Bound is calculated, perhaps a chart about the total economic output of mankind and how we plan to index it (how it relates to the total number of tickers available))
+
+			(put an image of the u symbol here) As listings in the namespace will grow with decentralized finance, TKN will retain a target buffer of unallocated tickers. Similar to EIP 1559, this buffer will accomodate fluxuations in the growth of listed projects. 
+			
+			<p>Scarcity by character length:<br>The beauty of a global ticker supply that increases exponentially by character length, is that any project in the world can secure a unique ticker symbol, and tap into the same infrastructure as multi billion dollar projects. However, the scarce, short tickers must be governed as such. To prevent squatting, empirical listing criteria will be applied to short tickers and lessened in proportion to
+				
+				short tickers will be granted to projects
+				
+				
+				As far as scarce, short tickers go
+			
+			
+				With 
+				While only a few hundred projects
+			It is obvious that with only 676 two letter tickers available, not every project can </p>
+			
+
+            <h1 id="technical-overview"><a class="header-link" href="#technical-overview"></a>Technical Overview</h1>
+            <p><strong>Abstract:</strong> TKN is a protocol layer hosted on top of <a href="https://docs.ens.domains/">ENS</a> that inherits it's distribution, tooling, and security.</p>
+            <div style="text-align: center; width: 100%;"><img style="width: 40%;" src="https://gateway.tkn.xyz/ipfs/QmaWx3Q6YjGYrdhiagLRCn2Shp3tP1tGtgNZoXidCxYa5j" alt="TKN Logo">
+            <br>
+            <!-- <i class="italic-caption" >The Ethereum => ENS => TKN stack</i> -->
+            <i class="italic-caption" >The TKN → ENS → Ethereum stack</i>
+            </div>
+            <hr>
+            <p>Underlying the TKN Protocol is the ENS domain <code>tkn.eth</code>.</p>
+            <p>All token symbols are persisted on the Ethereum L1 as subdomains of <code>tkn.eth</code>. For example: the contract for USDC can be found at 
+                <a href="https://app.ens.domains/usdc.tkn.eth">usdc.tkn.eth</a> 
+                and Wrapped Bitcoin at 
+                <a href="https://app.ens.domains/wbtc.tkn.eth">wbtc.tkn.eth</a>. Each subdomain points to the ENS <a href="https://etherscan.io/address/resolver.eth#code">Resolver</a> contract, where the token metadata is stored.
+            </p>
+            <p>The Resolver holds a rich onchain dataset which includes <code>name, description, avatar, url, notice, contractAddress, decimals, twitter, github, dweb, version, </code>sidechain & non-EVM contract addresses. Detailed documentation for the dataset can be viewed <a href="https://docs.tkn.xyz/developers/dataset">here</a>.</p>
+            <p>A json array of token symbols is persisted at <a href="https://registry.tkn.eth.limo">registry.tkn.eth</a>, which serves as the namespace's source of truth.</p>
+            <h4 id="querying-the-dataset"><a class="header-link" href="#querying-the-dataset"></a>Querying the dataset onchain</h4>
+            <p>Detailed developer documentation can be viewed <a href="https://docs.tkn.xyz/developers/querying-the-tns-dataset">here</a>.</p>
+            <p>A developer can query the TKN <a href="https://etherscan.io/address/tkn.eth#readContract">helper</a> contract to fetch all metadata at once, or query the ENS resolver to fetch individual data points.</p>
+            <p>This namespace and data can be resolved anywhere that an Ethereum RPC or ENS is supported, it can also be queried from any developer library that supports ENS.</p>
+            <div style="display: flex; justify-content: center;">
+                <img src="https://gateway.tkn.xyz/ipfs/QmeKVwjzCtnPA6C6W4AtR4QVoSwkmTPjcJFFqmE9Nrerrr" style="width: 90%; max-width: 778px; margin-top: 0.3em;" alt="ENS Libraries">
+            </div>
+            <br>
+            
+            <i class="italic-caption" >TKN can be queried from any tool or lauguage that supports ENS</i>
+            <h4 id="tkn-subgraph"><a class="header-link" href="#tkn-subgraph"></a>TKN Subgraph</h4>
+            <p>TKN has a GraphQL <a href="https://thegraph.com/hosted-service/subgraph/mike-data-nexus/tkn-_sg">subgraph</a>, that can return the entire dataset in one convenient HTTP query.</p>
+            <h4 id="tokenlist"><a class="header-link" href="#tokenlist"></a>TokenList</h4>
+            <p>TKN maintains a tokenlist that conforms to the industry standard: <a href="https://tokenlists.org/token-list?url=https://list.tkn.eth.limo">TokenLists.org</a></p>
+            <p>The tokenlist is published at <a href="https://list.tkn.eth.limo">list.tkn.eth</a></p>
+            
+            <h4 id="tokenlist"><a class="header-link" href="#tokenlist"></a>Decentralized Token Websites</h4>
+            <p>The decentralized web (websites with redundant, uncensorable hosting) is an ascending feature in the crypto ecosystem. Many token projects are publishing their frontends as decentralized websites, to make their protocols fully unstoppable. Read more about decentralized web resolution in <a href="https://eips.ethereum.org/EIPS/eip-1577">EIP1577</a>. As a part of the TKN metadata, any tokens with decentralized websites will resolve from their respective subdomain. For example: weth.tkn.eth for $WETH and snx.tkn.eth for $SNX. If your browser doesn't yet support the decentralized web, add .limo to the end of the domain: <a href="https://1inch.tkn.eth.limo">1inch.tkn.eth.limo</a>.</p>
+            <h4 id="technical-goals"><a class="header-link" href="#technical-goals"></a>Technical Objectives</h4>
+            <p>Now is the perfect moment to launch a single, powerful, ticker namespace and prevent long term technical fragmentation by geography and industry</p>
+            <ul>
+                <li>Decentralization is paramount. Every bit in the TKN stack is decentralized. Token metadata lives onchain, token logos are hosted on IPFS, and the TKN explorer is a decentralized web app.</li>
+                <li>The Ethereum L1 is the most highly valued and secure state machine. Instead of looking elsewhere for cheaper fees, TKN will purposefully embrace the ETH L1.</li>
+            </ul>
+
+            <h4 id="technical-vision"><a class="header-link" href="#technical-vision"></a>Technical Vision</h4>
+            <ul>
+                <li>Integrate TKN Protocol into EVM developer tooling</li>
+                <li>Continuously publish the TKN dataset from the Ethereum L1, to L2s and sidechains, for onchain consumption</li>
+                <li>Support TKN integration on non EVM protocols</li>
+                <li>Investigate persisting periodic cryptographic proofs to Bitcoin, in addition to the Ethereum L1 state</li>
+                <li>Develop tooling for wallet developers, including a substream graph to index user token balances in a decentralized manner</li>
+            </ul>
+
+            <h1 id="product"><a class="header-link" href="#product"></a>Product Overview</h1>
+            <p>For users, the Token Name Service enables many powerful and fun features.</p>
+
+            <h4 id="the-vision"><a class="header-link" href="#the-vision"></a>TKN Application</h4>
+            <p><a href="https://tkn.xyz">tkn.xyz</a> or (<a href="https://tkn.eth.limo">tkn.eth</a>) is an internally developed, decentralized application that makes it easy to interact with the protocol, and serves as a reference implementation for developers. While TKN is decentralized and can be added to any product, the reference application enables features:</p>
+            <h2>Decentralized Token Tracker</h2>
+            <p>The token leaderboard and price tracker is an institution in crypto. Now users can check prices and manage their portfolio from a community owned token tracker. Since the data sources are decentralized, users aren't locked in to a particular product.</p>
+            <h2 id="the-vision"><a class="header-link" href="#the-vision"></a>Metadata editor</h2>
+            <p>Inside the TKN application is a full featured token metadata editor. If a user encounters a data discrepancy, they can easily tap the edit button, and submit a revision for validation. No more will be be passive data consumers. The open TKN dataset will benefit from the eyeballs of the entire ecosystem.</p>
+
+            <h2 id="the-vision"><a class="header-link" href="#the-vision"></a>Mobile App</h2>
+            <p>The <a href="https://apps.apple.com/ca/app/tkn-decentralized-token-data/id6447381005?platform=iphone">TKN mobile app</a> is live in the iOS app store. With Android coming soon. It's the most convenient way to get TKN data, and the only token tracker that you can have ownership in.</p>
+            <p>60% of the world's internet traffic is from mobile devices. In Africa, the mobile web share is 70%. <cite><a href="https://explodingtopics.com/blog/mobile-internet-traffic">Internet Traffic from Mobile Devices (Aug 2023)</a></cite>  </p>
+            <p>The future of crypto is mobile. Publishing a mobile app enhances the reach of the TKN protocol, and accelerates crypto's mission of hypertokenization.</p>
+            
+            <h2 id="the-vision"><a class="header-link" href="#the-vision"></a>Decentralized Websites</h2>
+            <p>With the growth of the decentralized web, more and more token projects are publishing uncensorable websites & apps. A major shorcoming of the current DWeb is that it's difficult to locate the source for the decentralized website for your token. With TKN all you need to know is the symbol for the project.</p>
+            <p>With TKN, DWeb is easy. When you want to view the DWebsite for a token, just add the token name to <code>tkn.eth</code>. For example, Uniswap can be located at <a href="https://uni.tkn.eth.limo">uni.tkn.eth</a>.</p>
+            <p>Note: If your browser doesn't yet support DWeb, just add .limo to the end of the url and it will resolve. Example: <a href="https://uni.tkn.eth.limo">uni.tkn.eth.limo</a>.</p>
+            <h2 id="the-vision"><a class="header-link" href="#the-vision"></a>Developer Documentation</h2>
+            <p>Developers are the lifeblood of a protocol. Enhancing the developer canvas is the primary directive of the Token Name Service. Documentation is a top priority for the DAO's product development effort. TKN will strive to make it's developer docs a north star in the industry. The TKN docs can be viewed at <a href="https://docs.tkn.xyz/developers/querying-the-tns-dataset">docs.tkn.xyz</a></p>
+
+
+            <h2 id="the-vision"><a class="header-link" href="#the-vision"></a>The Vision</h2>
+            <h4>Product Goals</h4>
+            <p>Most successful protocols publish a reference application.</p>
+            <p>TKN aims to combine decentralization with</p>
+            <!-- <p>(Defi logos with TKN graphic)</p> -->
+            <img style="width: 100%; max-width: 400px;" src="https://gateway.tkn.xyz/ipfs/QmaJ1hcfU48pjRCFNQeQ5ZMyiajgXMeEawJjSd4N9KEkpr" >
+            <h2 id="the-importance-of-the-token-name-service"><a class="header-link"
+                    href="#the-importance-of-the-token-name-service"></a>The Importance of the Token Name Service</h2>
+            <p><em>Why does TKN matter?</em>
+                Most centralization takes hold when the stakes are low; before its pernicious effects are felt. </p>
+
+            <h2 id="what-is-the-token-name-service"><a class="header-link"
+                    href="#what-is-the-token-name-service"></a>What
+                is the Token Name Service?</h2>
+            <p>Put simply, the Token Name Service is a token database on Ethereum mainnet. </p>
+            <p>Every Ethereum node will contain crypto’s full token dataset. As L2s settle to Ethereum mainnet, they too
+                can
+                observe the global token state. (see: https://github.com/ethereum-optimism/ecosystem-contributions/issues/76)</p>
+            <p>Benefits</p>
+            <ul class="list">
+                <li>L2s contracts can securely fetch token contract addresses for other chains.</li>
+                <li>TKN data can be consumed anywhere ENS resolves</li>
+                <li>Allowing anyone to submit edits will increase scrutiny and maximize data accuracy. </li>
+            </ul>
+            <p>As the number of tokenized assets increases exponentially, it’s time for a transparent, publicly owned
+                token
+                registry. </p>
+
+            <h4>Giant list of current product:</h4>
+            <ul>
+                <li>dweb website pointers</li>
+            </ul>
+            <h3>Product Roadmap</h3>
+            <ul>
+                <li>Persist Web2 tickers in a complementary namespace onchain to create a unified interface</li>
+                <li>Publish tooling with world class UX to resolve decentralized websites on Mobile and Desktop devices</li>
+            </ul>
+
+            <h4 id="product-vision"><a class="header-link" href="#product-vision"></a>Product Vision</h4>
+            <ul>
+                <li>Maintain and expand tooling that makes it dead simple for projects to register their very own ticker</li>
+                <li>Integrate .tkn resolution into developer tooling</li>
+                <li>Develop product to benefit web2 and expand the purview of DeFi</li>
+            </ul>
+
+            <h1 id="roadmap"><a class="header-link" href="#roadmap"></a>Roadmap</h1>
+            <h2 id="pre-drop-"><a class="header-link" href="#pre-drop-"></a>Pre-Launch</h2>
+                <h5>TIP-0: TKN</h5>
+                <p>This whitepaper shall be considered the first TKN Improvement Proposal. (TIP) A request for comment on the TKN Protocol itself. This RFC will take place concurrently with the pre-launch airdrop to encourage community participation.</p>
+            <ul class="list">
+                <li>Drop $TKN to developers and governance participants with transfers paused</li>
+                <li>Allow a technical comment and diligence period</li>
+                <li>Bootstrap governance processes</li>
+            </ul>
+
+            <p><strong>Product Roadmap</strong></p>
+            <ul class="list">
+                <li>Etch all tokens above 20MM market cap</li>
+                <li>Decentralized substream token balance API for wallet and app developers</li>
+                <li>Add token discord links to official dataset</li>
+            </ul>
+
+
+            <h1 id="swp" class="swp-title" style=""><a class="header-link" href="#swp"></a>swp.eth</h1>
+            <div class="swp-body">
+                <p>The best user interface is no interface at all. </p>
+                <p>The most uncensorable UI, is no UI whatsoever.</p>
+                <p>Having a highly scrutinized onchain token database affords TKN something unique; guiding swaps using just a domain name. </p>
+                <h3>What is SWP?</h3>
+                <p>Swp.eth is a "headless DEX". When a user sends <b>$eth</b> to <code>usdc.swp.eth</code>, <b>$usdc</b> is automatically returned in the same transaction.</p>
+                <p>Thus, no UI or user inputs are required.</p>
+                <h5>Benefits</h5>
+                <ul>
+                    <li>Perform swaps from any wallet, no web3 browser required</li>
+                    <li>Resist censorship imposed by frontend UI developers</li>
+                </ul>
+
+                <h5>Why does this work?</h5>
+                <p>SWP Contracts observe TKN's onchain state. Thus when TKN is updated, SWP is updated. As such, SWP inherits the scrutiny and confidence of the TKN Protocol.</p>
+                <h5>Can devs integrate SWP into their smart contracts?</h5>
+                <p>Absolutely! By intgrating SWP, developers don't have to worry about the neverending ops required to maintain proper token pointers.</p>
+                <p>SWP is just the start of the intent based protocols enabled by onchain TKN data.</p>
+
+                <h5>Revenue</h5>
+                <p>While the deault swap fee is 0%, protocol swap revenue can be enabled by the DAO for each token pair</p>
+                <p>Revenue from swp will help steward the Token Name Service, and fund additional product development.</p>
+
+                <h5>Rollout</h5>
+                <p>SWP has launched with six pairs: <code>USDC, USDT, WBTC, DAI, SHIB, and TKN</code>. More pairs will be rolled out until every token with liquidity is supported. 
+                    </p>
+                    <p>Additional roadmap items include erc20 → erc20 swapping, and L2 support.</p>
+                <p>Interfaces for additional intents will be published, including bridging, and others.</p>
+
+                <h5>Additional routes</h5>
+                <p>TKN may also enable TKN routes, i.e. <code>swap.dai.tkn.eth</code>, to gauge respective engagement</p>
+
+                <p>TODO: ISSUES: Can only swap eth -> token currently, how can that be remedied? Swaps are not immune from slippage</p>
+
+                <h5>Conclusion</h5>
+                <P>As the popularity of Telegram trading bots has shown, users value speed and convenience. As more of the ecosystem learns about swp.eth, we anticipate a substantial and permanent percentage of trades will be conducted via intentful interfaces such as swp.eth.</P>
+                
+            </div>
+            <h1 id="growth"><a class="header-link" href="#growth"></a>Growth</h1>
+            <h2 id="10-11"><a class="header-link" href="#10-11"></a>The finish line</h2>
+            <img style="left: -1.15rem;width: 100%;max-width: 200px;position: relative; " src="https://gateway.tkn.xyz/ipfs/QmTg7Nje9bnyac3ACQF6KqZkeKZWqQmX2LFZXqzjfpJM5g" >
+            <br>
+            <i class="italic-caption" style="margin-block-end: 19.2px;">The number of onchain entities required to connect the world.</i>
+
+            <p style=" margin-top: 12px; ">Crypto's mission is to bring financial infrastructure to the world. A universally adopted crypto stack might necessitate roughly a dozen onchain entities per person. Entities can include token balances (assets, project shares, mortgages, stablecoins), identities, legal agreements, dwebsites, memberships, art, and other objects.</p>
+            <!-- <i>
+            <p>World Population (p) = 8,100,000,000</p>
+            <p>Entities per person (e) = 12</p>
+            <p>p * e = 100,000,000,000 entities (10^(11))</p>
+            </i> -->
+            <p>The adoption calculation is simple:</p>
+            <img style="width: 100%; max-width: 400px; margin-bottom: 0.4em;" src="https://gateway.tkn.xyz/ipfs/QmSxrQdKmqjUPmhXZfqW3SVZqx66RDfGLsosSdBso6M4RE" alt="10^(11) calculation">
+            <p>10^11 is the finish line. 10^11 pieces of onchain state are required to accomplish our mission.</p>
+            <p>TKN will accelerate adoption by building the product, tooling, onramps, and education to allow the world to tokenize. TKN will actively support the growth of other components and layers of the crypto stack to accomplish this goal.</p>
+            <h2>Tokenization</h2>
+            <h3>Growth Roadmap:</h3>
+            <p>The following is an asset onboarding roadmap in approximate order of difficulty:</p>
+            <ol>
+                <li>EVM Tokens</li>
+                <li>Non-EVM Tokens</li>
+                <li>Sovereign currencies</li>
+                <li>Major Equities</li>
+                <li>Personal Assets</li>
+                <li>SMBs</li>
+            </ol>
+            <h2>Growing TKN</h2>
+            <h4><a class="header-link" href="referral-program"></a>Referral Program</h4>
+            <p>For each new listing, a DAO or individual can refer the ticker. Said referrer will receive (XXX Amount XXX) allocation per ticker.</p>
+            <h4><a class="header-link" href="rolling-ecosystem-airdrops"></a>Rolling Airdrops</h4>
+            <p>The pre-launch airdrop has outlined an initial, accretive, subset of ecosystems. On a periodic basis, TKN will bring the members of new ecosystems into the fold.</p>
+
+
+            <hr>
+
+            <h1 id="dao"><a class="header-link" href="#dao"></a>DAO</h1>
+            <h2 id="governing-principles"><a class="header-link" href="#governing-principles"></a>Governing Principles</h2>
+            <ul class="list">
+                <li>If a function can be decentralized, it should be</li>
+                <li>Noncontentiousness: TKN should be friendly to the entire crypto ecosystem, tradfi, and the world. </li>
+                <li>At no time will the TKN DAO discuss politics and social causes</li>
+                <li>The TKN DAO will focus on tokenization, decentralization, and product, and ignore topics of politics and social causes.</li>
+            </ul>
+            <h2 id="principles"><a class="header-link" href="#principles"></a>Principles</h2>
+            <ul>
+                <li>TKN is a QA organization. Every inch of product released should be reliable, polished, and exciting.</li>
+                <li>Product development speed cures all ills. An organization that quits shipping is dead.</li>
+                <li>Product over price. Making something that people use trumps tokenomics.</li>
+                <li>TKN will deliver an audacious product launch at least once a year.</li>
+                <li>The org will prioritize projects that minimize governance effort.</li>
+                <li>Large projects can fight for themselves, independent developers need someone to fight for them. TKN will serve the independent developer and further decentralization.</li>
+            </ul>
+            
+            <h2 id="tkn-dao-responsibilities"><a class="header-link" href="#tkn-dao-responsibilities"></a>TKN DAO
+                Responsibilities</h2>
+            <ul class="list">
+                <li>Maintain up to date tooling for each major language and environment</li>
+                <li>Maintain the freshest dataset with the most updates per day. </li>
+                <li>Conduct onchain votes for any protocol changes via Tally.xyz or similar tooling</li>
+            </ul>
+    
+    
+
+            <h2 id="feedback-period-request-for-comment"><a class="header-link"
+                    href="#feedback-period-request-for-comment"></a>Feedback Period: Request For Comment</h2>
+            <h1 id="airdrop"><a class="header-link" href="#airdrop"></a>Pre-Launch $TKN Airdrop</h1>
+            <p>TKN is pleased to grant pre-formation governance rights to actors and core contributors in the crypto industry. 
+                </p>
+            <h2 id="referral-program"><a class="header-link" href="#referral-program"></a>Referral program</h2>
+            <p>Airdropping to an ecosystem’s active members is by nature, a capricious endeavor. To mitigate this, each
+                recipient will be able to choose one airdrop recipient to help TKN’s mission to decentralize crypto’s
+                ticker
+                namespace.
+                If you refer someone who receives a retroactive airdrop for a contribution in Airdrop 1
+                or
+                2, you will receive a 20% referral bonus.
+                *Airdrop referrals may be limited to the first 3000 recipients. *</p>
+            <h2 id="recipients"><a class="header-link" href="#recipients"></a>Recipients</h2>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="airdrop-recipients">
+                <thead>
+                    <tr>
+                        <th class="recipients"><strong>Recipients</strong><br /></th>
+                        <th class="recipients">Total<br /></th>
+                        <th class="recipients"><strong>Claim</strong><br /></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Token Projects</strong><br /></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Every token project with a market cap above $10MM<br /></td>
+                        <td>2300<br /></td>
+                        <td>Twitter<br /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="section-header"><strong>Leaders</strong><br /></td>
+                        <td class="section-header"></td>
+                        <td class="section-header"></td>
+                    </tr>
+                    <tr>
+                        <td>Manually selected Crypto Twitter communicators:<br><i>high engagement accounts, founders,
+                            research firms, news, hackathon organizers, and educators</i></td>
+                        <td>1000<br /></td>
+                        <td>Twitter<br /></td>
+                    </tr>
+                    <tr>
+                        <td>EIP Authors</td>
+                        <td>577<br /></td>
+                        <td>GitHub<br /></td>
+                    </tr>
+                    <tr>
+                        <td>Influential .eth name holders<br /></td>
+                        <td>650<br /></td>
+                        <td>Ethereum<br /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="section-header"><strong>Developers</strong><br /></td>
+                        <td class="section-header"></td>
+                        <td class="section-header"></td>
+                    </tr>
+                    <tr>
+                        <td>Prolific contributors:<br><i>Top 1000 open source commit creators</i></td>
+                        <td>1000<br /></td>
+                        <td>GitHub<br /></td>
+                    </tr>
+                    <tr>
+                        <td>Project masters:<br><i>Top 13 contributors to each popular crypto project</i></td>
+                        <td>? 1300<br /></td>
+                        <td>GitHub<br /></td>
+                    </tr>
+                    <tr>
+                        <td>Contributors to strategic open source developer tooling:<br><i>tooling, wallets, … ADD MORE
+                            COLOR ABOUT THE STRATEGIC HERE</i></td>
+                        <td>2000<br /></td>
+                        <td>GitHub<br /></td>
+                    </tr>
+                    <tr>
+                        <td>Cross project contributors:<br><i>contributed to repos in three or more organizations</i>
+                        </td>
+                        <td>650<br /></td>
+                        <td>GitHub <br /></td>
+                    </tr>
+                    <tr>
+                        <td>Admins:<br><i>organization members</i></td>
+                        <td>569<br /></td>
+                        <td>GitHub <br /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="section-header"><strong>Governance Participants</strong><br /></td>
+                        <td class="section-header"></td>
+                        <td class="section-header"></td>
+                    </tr>
+                    <tr>
+                        <td>Top onchain governance delegates:<br><i>tally.xyz</i></td>
+                        <td>791<br /></td>
+                        <td>Ethereum<br /></td>
+                    </tr>
+                    <tr>
+                        <td>Top offchain governance delegates:<br><i>snapshot.org</i></td>
+                        <td>1000<br /></td>
+                        <td>Ethereum<br /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="section-header"><strong>Stakeholders</strong><br /></td>
+                        <td class="section-header"></td>
+                        <td class="section-header"></td>
+                    </tr>
+                    <tr>
+                        <td>Top 20 holders of 20 major DeFi tokens<br /></td>
+                        <td>1200<br /></td>
+                        <td>Ethereum<br /></td>
+                    </tr>
+                    <tr>
+                        <td>Top Ethereum whales<br /></td>
+                        <td>500<br /></td>
+                        <td>Ethereum<br /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="section-header"><strong>Ecosystem</strong><br /></td>
+                        <td class="section-header"></td>
+                        <td class="section-header"></td>
+                    </tr>
+                    <tr>
+                        <td>Metacartel and Raid guild members<br /></td>
+                        <td>300<br /></td>
+                        <td>Ethereum<br /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="table-placeholder" style="height: 1600px;"></div>
+        <script>
+            // Function to adjust placeholder's height
+            function adjustPlaceholderHeight() {
+                // Get the table and placeholder elements
+                var table = document.querySelector('.airdrop-recipients');
+                var placeholder = document.getElementById('table-placeholder');
+        
+                // Set the placeholder's height to the table's height
+                placeholder.style.height = (table.offsetHeight + 14) + 'px';
+            }
+        
+            // Call the function when the page loads
+            adjustPlaceholderHeight();
+        
+            // Also call the function when the window is resized
+            window.onresize = adjustPlaceholderHeight;
+        </script>
+
+        <h2 id="pre-drop-goals"><a class="header-link" href="#pre-drop-goals"></a>Pre-drop goals</h2>
+            <p>The TKN Protocol requests feedback from the community </p>
+            <ol class="list">
+                <li>API</li>
+                <li>Data update protocol</li>
+                <li>Listing criteria</li>
+            </ol>
+            <h2 id="pre-launch-objectives"><a class="header-link" href="#pre-launch-objectives"></a>Pre-launch
+                objectives
+            </h2>
+            <p>During the pre-launch period we aim to achieve a robust governance body with core contributors to Ethereum, Tooling, Defi, Wallets, general development, and the greater crypto ecosystem. <br></p>
+            <p><b>Goals:</b></p>
+
+
+            <ul>
+                <li>Bootstrap governance</li>
+                <li>Finalize $TKN security staking procedures</li>
+                <li>Get feedback on APIs and tooling</li>
+                <li>Communicate, outreach, and build trust within the development community</li>
+                <li>Hone messaging for tradfi, web2, and the rest of the world.</li>
+
+            </ul>
+        <h2 id="pre-drop-goals"><a class="header-link" href="#pre-drop-goals"></a>Missed the Airdrop?</h2>
+        <p>Due to the formative nature of the pre-launch period, substantial grants will be made retroactively to contributors during this phase.</p>
+        <p>If your status as an ecosystem core contributor has been overlooked, DM <a href="https://twitter.com/TokenDao_">@TokenDao_</a>
+            on Twitter/X or email <a href="mailto:claim@tkn.xyz">claim@tkn.xyz</a>, and we will add you to the pre-launch airdrop.
+        </p>
+        <h4><a class="header-link" href="#proof-of-tweet"></a>Proof of tweet</h4>
+        <p>If you've tweeted or posted publicly about tickers, nameservices, or other relevant topics somewhere in the past, contact us.</p>
+        <p><strong>Airdrop 1</strong></p>
+        <p>Granting ownership to the entire community</p>
+        <ul class="list">
+            <li>Much bigger airdrop </li>
+        </ul>
+        <h2 id="airdrop-1"><a class="header-link" href="#airdrop-1"></a>Airdrops 2-4</h2>
+        <p>Future airdrops will be conducted to reward contributors and further decentralize the protocol</p>
+        <h4>Community Allocation</h4>
+        <div class="table-wrapper">
+            <table class="allocations">
+                <thead>
+                    <tr>
+                        <th class="recipients"><strong>Activity</strong><br /></th>
+                        <th class="recipients"><strong>Percentage</strong><br /></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Airdrop 1</td><td>15%</td></tr>
+                    <tr><td>Airdrop 2</td><td>15%</td></tr>
+                    <tr><td>Rewards for Land Rush period data submitters</td><td>2%</td></tr>
+                    <tr><td>Ongoing data rewards</td><td>5%</td></tr>
+                    <tr><td>Pre-drop allocation to developers, delegates, and surrogates</td><td>5%</td></tr>
+                    <tr><td>TKN DAO treasury</td><td>50%</td></tr>
+                    <tr><td>CDO: A designer with broad creative mandate to craft the TKN Application. “<em>The Johnny Ive of TKN</em>”</td><td>1%</td></tr>
+                    <tr><td>Outlined for future ecosystem adoption efforts</td><td>15%</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="allocation-table-placeholder" style="height: 600px;"></div>
+        <script>
+            // Function to adjust placeholder's height
+            function adjustAllocationTablePlaceholderHeight() {
+                // Get the table and placeholder elements
+                var table = document.querySelector('.allocations');
+                var placeholder = document.getElementById('allocation-table-placeholder');
+        
+                // Set the placeholder's height to the table's height
+                placeholder.style.height = (table.offsetHeight + 24) + 'px';
+            }
+        
+            // Call the function when the page loads
+            adjustAllocationTablePlaceholderHeight();
+        
+            // Attach the function to the resize event
+            window.addEventListener('resize', adjustAllocationTablePlaceholderHeight);
+        </script>
+
+        <h4>Objectives</h4>
+        <ul>
+            <li>Incentivize the freshest dataset in crypto</li>
+            <li>Reward protocols that integrate the Token Name Service</li>
+            <li>Reward users that engage with the reference app</li>
+            <li>Give substantial rewards to engineers that contribute pull requests</li>
+            <li>Incentivize users that perform swaps with <span style="font-family: 'Pixeloid-Bold', monospace; font-size: 18px; margin-left: 0.1em;"> swp.eth</span></li>
+        </ul>
+
+        <p>On a rolling basis we may choose to allocate $TKN to additional ecosystems</p>
+
+        <h3 id="retroactive-allocation"><a class="header-link" href="#retroactive-allocation"></a>Retroactive allocation
+        </h3>
+        <h2 id="token-supply"><a class="header-link" href="#token-supply"></a>Token Supply</h2>
+        <p>1,000,000,000 TKN will be created with a hard cap</p>
+        <h2 id="tkn-allocation"><a class="header-link" href="#tkn-distribution"></a>TKN Distribution</h2>
+        <img src="https://gateway.tkn.xyz/ipfs/QmRVMRy7WXsc9SN28vgno4nB4uKReQ5mDnyUpXorArvF8E" alt="TKN Allocation" style="width: 100%; max-width: 600px;" />
+
+
+        <h1 id="the-case-for-tkn"><a class="header-link" href="#the-case-for-tkn"></a>The case for $TKN</h1>
+        <p><em>A writeup by Buddha.eth (This is not investment advice)</em>
+            *
+            *
+            Casual observers will value TKN as the decentralized coingecko. Patient observers will see TNS as
+            potentially governing crypto’s ticker symbols. Controlling the token namespace is akin to being the NYSE
+            of
+            web3, except on a global scale. </p>
+        <p class="img-container"><img src="https://gateway.tkn.xyz/ipfs/QmQno9CA7r8eq48rX81wFJvEPeZbqsZ9eHU5KaUixB9M94" alt="Tokenization Progress" style="width: 100%; max-width: 600px;"></p>
+        <p>As crypto’s throughout, and adoption improves, $TKN will be ready to onboard the next million assets.
+            *
+            *</p>
+        <p>With a total crypto market cap of <strong>$1.12 trillion</strong> [1] dollars, and an average annual
+            trading
+            volume of <strong>$43.48 trillion</strong> [1] since July 2020, </p>
+        <p>Unlike most DAOs, the TKN DAO’s primary responsibility (maintain an accurate token list) is simple. This
+            simplicity minimizes execution risk, which extends the project’s risk adjusted lifetime. An extended
+            lifetime allows more compounding growth, which increases the net present value. </p>
+            <hr>
+                    <p>Imagine a world where every asset has an identity</p>
+        <p> The revolution of the decentralized token tracker has begun: a transparent, rule based protocol, owned
+            by
+            the developers and users that consume it’s data.</p>
+        <p>The fight against centralization is not finished. The token symbols for <strong>$1.12 trillion</strong>
+            dollars worth of assets are granted by a few unknown individuals at opaque organizations. Crypto is a
+            revolution of transparency and composability; It’s a movement that rewards the most censorship resistant
+            conventions.</p>
+        <p>It’s time to decentralize the token list. It’s time to secure our tickers in preparation for the next
+            $100
+            trillion in assets. (Maybe write about the next million tickers? Put something about onboarding all of
+            the
+            earth’s fractionally owned assets) &lt;&lt;__ maybe put something about the global percentage of assets,
+            or
+            number of tokens, instead of the market cap here___&gt;&gt; It’s time to launch the Token Name Service.
+        </p>
+
+
+
+
+        <h2 id="addendum"><a class="header-link" href="#addendum"></a>Addendum</h2>
+        <h3 id="what-about-coinmarketcapcoingecko"><a class="header-link"
+                href="#what-about-coinmarketcapcoingecko"></a>Internationalization</h3>
+                <p></p>
+        <h3 id="what-about-coinmarketcapcoingecko"><a class="header-link"
+                href="#what-about-coinmarketcapcoingecko"></a>What about Coinmarketcap/Coingecko?</h3>
+        <p>CMC/CG can and should use the Token Name Service as a data source.
+            TKN is designed for maximum decentralization and security. The centralized token trackers serve a different,
+            and valid purpose.</p>
+        <p>As </p>
+        <p>The token list is as foundational to decentralized finance as the DEX. Decentralizing the Token List is
+            essential to fighting financial censorship.</p>
+        <p>The revolution against private APIs</p>
+        <ul class="list">
+            <li>Any scope of human activity that passes through private APIs is theft.</li>
+        </ul>
+        <p>The economic drag of the private API</p>
+        <ul class="list">
+            <li>Preventing users from using their own data is an infraction on human rights, and a drag on economic
+                development</li>
+            <li></li>
+        </ul>
+        <h2 id="special-thanks"><a class="header-link" href="#special-thanks"></a>Special Thanks</h2>
+        <p>raffy.eth, serenae.eth</p>
+        <p><i>This document was 100% devised and written by human beings</i></p>
+        <script>
+            function timeout(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            function fetchAndDisplayData() {
+                console.log("Fetching new ticker data")
+                fetch('https://feed.tkn.xyz/prices/page/all')
+                    .then(response => response.json())
+                    .then(data => {
+                        var tickersPositiveElement = document.getElementById("tickers-positive");
+                        var tickersNegativeElement = document.getElementById("tickers-negative");
+                        var tickersDataPositive = '';
+                        var tickersDataNegative = '';
+                        Object.keys(data).forEach(function (ticker) {
+                            var tickerPrice = data[ticker] ? data[ticker].PRICE.replace(' ', '') : 'N/A';
+                            var change = data[ticker] ? data[ticker].CHANGEPCT24HOUR : 0;
+                            if (!change.includes('-')) {
+                                change = "+" + change
+                            }
+                            var tickerData = ticker + ": " + tickerPrice + " " + change + "% ";
+                            if (change >= 0) {
+                                tickersDataPositive += tickerData;
+                            } else {
+                                tickersDataNegative += tickerData;
+                            }
+                        });
+                        tickersPositiveElement.innerHTML = tickersDataPositive;
+                        tickersNegativeElement.innerHTML = tickersDataNegative;
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+
+                timeout(3000).then(() => {
+                    document.getElementById("tickers-positive").classList.add('start-animation');
+                    document.getElementById("tickers-negative").classList.add('start-animation');
+                });
+            }
+
+            fetchAndDisplayData();  // Fetch and display data immediately on page load
+            setInterval(fetchAndDisplayData, 5 * 60 * 1000);  // Then refresh every 5 minutes
+        </script>
+    </body>
+
+</html>
