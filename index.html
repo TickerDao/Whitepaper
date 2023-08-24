@@ -303,10 +303,10 @@
 
             <h4>The DeFi stack</h4>
 
-            <img style="width: 100%; max-width: 600px;" src="https://gateway.tkn.xyz/ipfs/QmZ1knRpefSsMNWFijqjMe2zJ6Uv8vKhi7B8TuLvM7DZNS" >
-            <br>
+            <div style="text-align: center;">
+            <img style="width: 100%; max-width: 550px;" src="https://gateway.tkn.xyz/ipfs/QmZ1knRpefSsMNWFijqjMe2zJ6Uv8vKhi7B8TuLvM7DZNS" >
+            </div>
             <i class="italic-caption">DeFi Legos</i>
-            <br>
             <p style="margin-top: 0.4em;">Decentralized finance is a stack of independent protocols that work in concert to create unstoppable financial infrastructure. The DeFi stack is a revolutionary achievement. <br>However, it has a remaining point of centralization: <b>the token list.</b></p>
 
 
@@ -314,8 +314,6 @@
             <p>Most centralization takes hold when the stakes are low; before its pernicious effects are felt. The network effects of centralization can take decades to overcome, if ever.</p>
             <p>The DeFi stack
  is only as strong as it's weakest layer. </p>
-            <h2>Accelerating Crypto Adoption</h2>
-            <p></p>
             <h2>Completing the DeFi stack</h2>
             <!-- <p>Without TKN </p> -->
             <!-- <h4>Primary Directives</h4>
@@ -419,6 +417,7 @@
 			<p>All currently existing crypto projects above (10 mil mit cap?) will be granted their tickers regardless of fitness</p>
 			
 			<h4>Delisting Criteria</h4>
+            <p>If a project becomes inactive and falls below the value criteria (liquidity, market capitalization), it enters a probationary period, by which the project has a period of time to re-meet the minimum criteria.</p>
             
             <h4 id="ticker-upgrades"><a class="header-link" href="#ticker-upgrades"></a>Upgrading</h4>
             <p>A token that starts out with a longer ticker, and increases in value is eligible to upgrade to a shorter, prestige ticker. For continuity, the entity will be allowed to retain it's former, longer, ticker.</p>
@@ -426,13 +425,27 @@
             <h4>Non-ASCII characters</h4>
             <p>Non-ASCII character normalization via <a href="https://github.com/ensdomains/docs/blob/master/ens-improvement-proposals/ensip-15-normalization-standard.md">ENSIP-15</a> unlocks additional supply and expressiveness in the TKN namespace.</p>
 
-            <h3 id="dataset"><a class="header-link" href="#dataset"></a>Dataset:</h3>
-            <p>Populate token data for projects worth &gt; 10MM
-                Populate upcoming datapoints as seen here: <a
-                    href="https://docs.tkn.xyz/developers/dataset#upcoming-datapoints">upcoming datapoints</a></p>
+            <h4 id="dataset"><a class="header-link" href="#dataset"></a>Dataset</h4>
+            <p>TKN will maintain an onchain meta-dataset for each token (<i>name, contractAddress,  ect.</i>)</p>
 
-            <h4>NOTICE: Submitting data</h4>
-            <p>Write something about the protocol for user submitted data, even if it is short</p>
+            <dl>
+                <!-- <dt></dt> -->
+                <dd>
+                    <h5>Submitting Data</h5>
+                    <p>Any user can, and is encouraged to, submit a data update or correction.</p>
+                    <h5>Validating Data</h5>
+                    <p>Elected delegates validate user submitted data for accuracy. After a 24 hour observational period, the update is migrated onchain.</p>
+                    <h5>Data Overrides</h5>
+                    <p>If a quorum of $TKN holders disagree with a specific datapoint, an onchain vote can be held to override the data. 
+                        An onchain vote will modify the contract state, and is the supreme enforcer of tokenholder's rights.
+                    </p>
+                    <h5>Securing Data</h5>
+                    <p>Curators can stake $TKN to signal their confidence in the metadata for a token.</p>
+                </dd>
+            </dl>
+
+            <h4>The Protocol</h4>
+            <p>A living document will be published onchain, with operating procedures that govern the Token Name Service. It is an important living document, and one of the main governance features for TKN. Changes to the protocol directly affect the mechanics of the TKN namespace. </p>
 
             <h4 id="protocol-goals"><a class="header-link" href="#protocol-goals"></a>Protocol Objectives</h4>
             The power of a single, global, asset namespace is to elegantly deliver a snapshot of humanity's economic activity to a single developer's fingertips.
@@ -447,32 +460,6 @@
                 <li>Expand the scope of tracked assets </li>
                 <li>Expand the types of data tracked. Push the type scope outward to expand the secure dataset available to developers</li>
             </ul>
-
-            <h4>STASHED, REMOVE</h4>
-            <p>Developers are forced to build applications that are limited to a single asset class, or a single geography. The power of a single, global, asset namespace
-                is that it allows developers to build applications used by anyone, anywhere, at any time. The current financial system is fragmented, and the data is siloed.
-               Only by crafting a single, global, asset namespace, can we  is to bring snapshots of human activity to developer's fingertips.
-   </p>
-            <p>Developers are forced to build applications that are limited to a single asset class, or a single geography. The power of a single, global, asset namespace
-                is that it allows developers to build applications used by anyone, anywhere, at any time. The current financial system is fragmented, and the data is siloed.
-               Only by crafting a single, global, asset namespace, can we  is to bring snapshots of human activity to developer's fingertips.
-   </p>
-
-            (Maybe put something about how Economic Upper Bound is calculated, perhaps a chart about the total economic output of mankind and how we plan to index it (how it relates to the total number of tickers available))
-
-			(put an image of the u symbol here) As listings in the namespace will grow with decentralized finance, TKN will retain a target buffer of unallocated tickers. Similar to EIP 1559, this buffer will accomodate fluxuations in the growth of listed projects. 
-			
-			<p>Scarcity by character length:<br>The beauty of a global ticker supply that increases exponentially by character length, is that any project in the world can secure a unique ticker symbol, and tap into the same infrastructure as multi billion dollar projects. However, the scarce, short tickers must be governed as such. To prevent squatting, empirical listing criteria will be applied to short tickers and lessened in proportion to
-				
-				short tickers will be granted to projects
-				
-				
-				As far as scarce, short tickers go
-			
-			
-				With 
-				While only a few hundred projects
-			It is obvious that with only 676 two letter tickers available, not every project can </p>
 			
 
             <h1 id="technical-overview"><a class="header-link" href="#technical-overview"></a>Technical Overview</h1>
@@ -489,7 +476,7 @@
                 and Wrapped Bitcoin at 
                 <a href="https://app.ens.domains/wbtc.tkn.eth">wbtc.tkn.eth</a>. Each subdomain points to the ENS <a href="https://etherscan.io/address/resolver.eth#code">Resolver</a> contract, where the token metadata is stored.
             </p>
-            <p>The Resolver holds a rich onchain dataset which includes <code>name, description, avatar, url, notice, contractAddress, decimals, twitter, github, dweb, version, </code>sidechain & non-EVM contract addresses. Detailed documentation for the dataset can be viewed <a href="https://docs.tkn.xyz/developers/dataset">here</a>.</p>
+            <p>The <a href="https://docs.ens.domains/contract-api-reference/publicresolver">resolver</a> maintains a rich onchain dataset for each symbol, which includes: <blockquote><code>Name, description, avatar, url, notice, contractAddress, decimals, twitter, github, dweb, version,</code> sidechain & non-EVM contract addresses.</blockquote> Detailed documentation for the dataset can be viewed <a href="https://docs.tkn.xyz/developers/dataset">here</a>.</p>
             <p>A json array of token symbols is persisted at <a href="https://registry.tkn.eth.limo">registry.tkn.eth</a>, which serves as the namespace's source of truth.</p>
             <h4 id="querying-the-dataset"><a class="header-link" href="#querying-the-dataset"></a>Querying the dataset onchain</h4>
             <p>Detailed developer documentation can be viewed <a href="https://docs.tkn.xyz/developers/querying-the-tns-dataset">here</a>.</p>
@@ -532,6 +519,8 @@
             <p><a href="https://tkn.xyz">tkn.xyz</a> or (<a href="https://tkn.eth.limo">tkn.eth</a>) is an internally developed, decentralized application that makes it easy to interact with the protocol, and serves as a reference implementation for developers. While TKN is decentralized and can be added to any product, the reference application enables features:</p>
             <h2>Decentralized Token Tracker</h2>
             <p>The token leaderboard and price tracker is an institution in crypto. Now users can check prices and manage their portfolio from a community owned token tracker. Since the data sources are decentralized, users aren't locked in to a particular product.</p>
+            <h5 id="composability"><a class="header-link" href="#composability"></a>Composability & Portability</h5>
+            <p>The TKN reference app provides an opportunity to develop an open portfolio standard. When a user favorites a token, a portfolio singleton can be saved, which can be consumed by other portfolio trackers and other products.</p>
             <h2 id="the-vision"><a class="header-link" href="#the-vision"></a>Metadata editor</h2>
             <p>Inside the TKN application is a full featured token metadata editor. If a user encounters a data discrepancy, they can easily tap the edit button, and submit a revision for validation. No more will be be passive data consumers. The open TKN dataset will benefit from the eyeballs of the entire ecosystem.</p>
 
@@ -544,6 +533,7 @@
             <p>With the growth of the decentralized web, more and more token projects are publishing uncensorable websites & apps. A major shorcoming of the current DWeb is that it's difficult to locate the source for the decentralized website for your token. With TKN all you need to know is the symbol for the project.</p>
             <p>With TKN, DWeb is easy. When you want to view the DWebsite for a token, just add the token name to <code>tkn.eth</code>. For example, Uniswap can be located at <a href="https://uni.tkn.eth.limo">uni.tkn.eth</a>.</p>
             <p>Note: If your browser doesn't yet support DWeb, just add .limo to the end of the url and it will resolve. Example: <a href="https://uni.tkn.eth.limo">uni.tkn.eth.limo</a>.</p>
+
             <h2 id="the-vision"><a class="header-link" href="#the-vision"></a>Developer Documentation</h2>
             <p>Developers are the lifeblood of a protocol. Enhancing the developer canvas is the primary directive of the Token Name Service. Documentation is a top priority for the DAO's product development effort. TKN will strive to make it's developer docs a north star in the industry. The TKN docs can be viewed at <a href="https://docs.tkn.xyz/developers/querying-the-tns-dataset">docs.tkn.xyz</a></p>
 
