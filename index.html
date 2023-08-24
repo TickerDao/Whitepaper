@@ -426,13 +426,13 @@
             <p>Non-ASCII character normalization via <a href="https://github.com/ensdomains/docs/blob/master/ens-improvement-proposals/ensip-15-normalization-standard.md">ENSIP-15</a> unlocks additional supply and expressiveness in the TKN namespace.</p>
 
             <h4 id="dataset"><a class="header-link" href="#dataset"></a>Dataset</h4>
-            <p>TKN will maintain an onchain meta-dataset for each token (<i>name, contractAddress,  ect.</i>)</p>
+            <p>TKN will maintain an onchain meta-dataset for each token (<i>name, contractAddress, url, Twitter, ect.</i>)</p>
 
             <dl>
                 <!-- <dt></dt> -->
                 <dd>
                     <h5>Submitting Data</h5>
-                    <p>Any user can, and is encouraged to, submit a data update or correction.</p>
+                    <p>Any user can, and is encouraged to, submit a data update or correction. Allowing anyone to submit edits will increase scrutiny and maximize data accuracy. The contributor may be rewarded in $TKN.</p>
                     <h5>Validating Data</h5>
                     <p>Elected delegates validate user submitted data for accuracy. After a 24 hour observational period, the update is migrated onchain.</p>
                     <h5>Data Overrides</h5>
@@ -501,6 +501,7 @@
             <ul>
                 <li>Decentralization is paramount. Every bit in the TKN stack is decentralized. Token metadata lives onchain, token logos are hosted on IPFS, and the TKN explorer is a decentralized web app.</li>
                 <li>The Ethereum L1 is the most highly valued and secure state machine. Instead of looking elsewhere for cheaper fees, TKN will purposefully embrace the ETH L1.</li>
+                <li>Persisting on L1 will allow contracts on L2s to observe and consume the TKN state. <code><a href="https://github.com/ethereum-optimism/ecosystem-contributions/issues/76">REMOTESTATICCALL</a></code> will enable this in the OP stack.</li>
             </ul>
 
             <h4 id="technical-vision"><a class="header-link" href="#technical-vision"></a>Technical Vision</h4>
@@ -513,7 +514,10 @@
             </ul>
 
             <h1 id="product"><a class="header-link" href="#product"></a>Product Overview</h1>
-            <p>For users, the Token Name Service enables many powerful and fun features.</p>
+            <!-- <div style="text-align: center; margin-bottom: 1em;"> -->
+                <!-- <img style="width: 100%; max-width: 400px;" src="https://gateway.tkn.xyz/ipfs/QmaJ1hcfU48pjRCFNQeQ5ZMyiajgXMeEawJjSd4N9KEkpr" > -->
+            <!-- </div> -->
+            <p>An overview of products that are both enabled by the protocol, and contribute to it's operation:</p>
 
             <h4 id="the-vision"><a class="header-link" href="#the-vision"></a>TKN Application</h4>
             <p><a href="https://tkn.xyz">tkn.xyz</a> or (<a href="https://tkn.eth.limo">tkn.eth</a>) is an internally developed, decentralized application that makes it easy to interact with the protocol, and serves as a reference implementation for developers. While TKN is decentralized and can be added to any product, the reference application enables features:</p>
@@ -522,7 +526,7 @@
             <h5 id="composability"><a class="header-link" href="#composability"></a>Composability & Portability</h5>
             <p>The TKN reference app provides an opportunity to develop an open portfolio standard. When a user favorites a token, a portfolio singleton can be saved, which can be consumed by other portfolio trackers and other products.</p>
             <h2 id="the-vision"><a class="header-link" href="#the-vision"></a>Metadata editor</h2>
-            <p>Inside the TKN application is a full featured token metadata editor. If a user encounters a data discrepancy, they can easily tap the edit button, and submit a revision for validation. No more will be be passive data consumers. The open TKN dataset will benefit from the eyeballs of the entire ecosystem.</p>
+            <p>Inside the TKN application is a full featured token metadata editor. If a user encounters a data discrepancy, they can easily tap the edit button, and submit a revision for validation. No more will be be passive data consumers. The open TKN dataset will benefit from the eyeballs of the entire ecosystem.Allowing anyone to submit edits will increase scrutiny and maximize data accuracy.</p>
 
             <h2 id="the-vision"><a class="header-link" href="#the-vision"></a>Mobile App</h2>
             <p>The <a href="https://apps.apple.com/ca/app/tkn-decentralized-token-data/id6447381005?platform=iphone">TKN mobile app</a> is live in the iOS app store. With Android coming soon. It's the most convenient way to get TKN data, and the only token tracker that you can have ownership in.</p>
@@ -537,39 +541,6 @@
             <h2 id="the-vision"><a class="header-link" href="#the-vision"></a>Developer Documentation</h2>
             <p>Developers are the lifeblood of a protocol. Enhancing the developer canvas is the primary directive of the Token Name Service. Documentation is a top priority for the DAO's product development effort. TKN will strive to make it's developer docs a north star in the industry. The TKN docs can be viewed at <a href="https://docs.tkn.xyz/developers/querying-the-tns-dataset">docs.tkn.xyz</a></p>
 
-
-            <h2 id="the-vision"><a class="header-link" href="#the-vision"></a>The Vision</h2>
-            <h4>Product Goals</h4>
-            <p>Most successful protocols publish a reference application.</p>
-            <p>TKN aims to combine decentralization with</p>
-            <!-- <p>(Defi logos with TKN graphic)</p> -->
-            <img style="width: 100%; max-width: 400px;" src="https://gateway.tkn.xyz/ipfs/QmaJ1hcfU48pjRCFNQeQ5ZMyiajgXMeEawJjSd4N9KEkpr" >
-            <h2 id="the-importance-of-the-token-name-service"><a class="header-link"
-                    href="#the-importance-of-the-token-name-service"></a>The Importance of the Token Name Service</h2>
-            <p><em>Why does TKN matter?</em>
-                Most centralization takes hold when the stakes are low; before its pernicious effects are felt. </p>
-
-            <h2 id="what-is-the-token-name-service"><a class="header-link"
-                    href="#what-is-the-token-name-service"></a>What
-                is the Token Name Service?</h2>
-            <p>Put simply, the Token Name Service is a token database on Ethereum mainnet. </p>
-            <p>Every Ethereum node will contain crypto’s full token dataset. As L2s settle to Ethereum mainnet, they too
-                can
-                observe the global token state. (see: https://github.com/ethereum-optimism/ecosystem-contributions/issues/76)</p>
-            <p>Benefits</p>
-            <ul class="list">
-                <li>L2s contracts can securely fetch token contract addresses for other chains.</li>
-                <li>TKN data can be consumed anywhere ENS resolves</li>
-                <li>Allowing anyone to submit edits will increase scrutiny and maximize data accuracy. </li>
-            </ul>
-            <p>As the number of tokenized assets increases exponentially, it’s time for a transparent, publicly owned
-                token
-                registry. </p>
-
-            <h4>Giant list of current product:</h4>
-            <ul>
-                <li>dweb website pointers</li>
-            </ul>
             <h3>Product Roadmap</h3>
             <ul>
                 <li>Persist Web2 tickers in a complementary namespace onchain to create a unified interface</li>
