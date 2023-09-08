@@ -835,7 +835,7 @@
                             color: black;
                         }
                     </style>
-                    <tr>
+                    <tr id="firstRepoListInsertion">
                         <td colspan="3" style="text-decoration: underline; text-align:center; cursor: pointer;" class="viewRepos firstGithubList">View Eligible Orgs & Repositories List</td>
                     </tr>
                     <script>
@@ -1057,6 +1057,7 @@
                             "Zilliqa",
                             "Zimtente/ens-collections"
                         ];
+                        var tokenList = document.querySelector('#firstRepoListInsertion');
                         repos.forEach(function(repo) {
                             var row = document.createElement('tr');
                             row.className = "repoListData";
@@ -1074,7 +1075,7 @@
                             link.appendChild(code);
                             cell.appendChild(link);
                             row.appendChild(cell);
-                            document.querySelector('.airdrop-recipients tbody').appendChild(row);
+                            tokenList.parentNode.insertBefore(row, tokenList.nextSibling);
                         });
                     </script>
                   
@@ -1132,12 +1133,13 @@
                             color: black;
                         }
                     </style>
-                    <tr>
+                    <tr id="firstDefiListInsertion">
                         <td colspan="3" style="text-decoration: underline; text-align:center; cursor: pointer;" class="viewDefiTokens firstList">View Eligible DeFi Tokens</td>
                     </tr>
                     <script>
                         tokens = [["https://etherscan.io/token/0x111111111117dc0aa78b770fa6a738034120c302", "1INCH", "1inch"], ["https://etherscan.io/token/0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9", "AAVE", "Aave"], ["https://etherscan.io/token/0xff20817765cb7f73d4bde2e66e067e58d11095c2", "AMP", "Amp"], ["https://etherscan.io/token/0x0b38210ea11411557c13457D4dA7dC6ea731B88a", "API3", "API3"], ["https://arbiscan.io/token/0x912CE59144191C1204E64559FE8253a0e49E6548", "ARB", "Arbitrum"], ["https://etherscan.io/address/0xba100000625a3754423978a60c9317c58a424e3d", "BAL", "Balancer"], ["https://etherscan.io/address/0xba11d00c5f74255f56a5e366f4f77f5a186d7f55", "BAND", "Band Protocol"], ["https://etherscan.io/address/0x42bbfa2e77757c645eeaad1655e0911a7553efbc", "BOBA", "Boba Network"], ["https://ftmscan.com/token/0x841fad6eae12c286d1fd18d1d525dffa75c7effe", "BOO", "Spookyswap"], ["https://bscscan.com/address/0xaec945e04baf28b135fa7c640f624f8d90f1c3a6", "C98", "Coin98"], ["https://bscscan.com/address/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82", "CAKE", "PancakeSwap"], ["https://etherscan.io/address/0xc00e94cb662c3520282e6f5717214004a7f26888", "COMP", "Compound"], ["https://etherscan.io/token/0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB", "COW", "CoW Protocol"], ["https://etherscan.io/address/0xD533a949740bb3306d119CC777fa900bA034cd52", "CRV", "Curve DAO Token"], ["https://etherscan.io/address/0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b", "CVX", "Convex Finance"], ["https://etherscan.io/token/0x92d6c1e31e14520e676a687f0a93788b716beff5", "DYDX", "dYdX"], ["https://etherscan.io/address/0x6b175474e89094c44da98b954eedeac495271d0f", "DAI", "Dai"], ["https://etherscan.io/token/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72", "ENS", "Ethereum Name Service"], ["https://etherscan.io/address/0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0", "FXS", "Frax Share"], ["https://arbiscan.io/token/0xfc5A1A6EB076a2C7aD06eD22C90d7E710E35ad0a", "GMX", "GMX"], ["https://etherscan.io/address/0x6810e776880c02933d47db1b9fc05908e5386b96", "GNO", "Gnosis"], ["https://polygonscan.com/token/0xe5417af564e4bfda1c483642db72007871397896", "GNS", "Gains Network"], ["https://etherscan.io/token/0xc944e90c64b2c07662a292be6244bdf05cda44a7", "GRT", "The Graph"], ["https://etherscan.io/token/0xf57e7e7c23978c3caec3c3548e3d615c346e79ff", "IMX", "Immutable X"], ["https://etherscan.io/token/0xe28b3b32b6c345a34ff64674606124dd5aceca30", "INJ", "Injective"], ["https://snowtrace.io/token/0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd", "JOE", "Trader Joe"], ["https://ethplorer.io/address/0x5a98fcbea516cf06857215779fd812ca3bef1b32", "LDO", "Lido DAO"], ["https://etherscan.io/token/0x9b4aca29593a7b6d34100149820fee8ad5cfeb8b", "LINK", "Chainlink"], ["https://etherscan.io/token/0x6DEA81C8171D0bA574754EF6F8b412F2Ed88c54D", "LQTY", "Liquity"], ["https://etherscan.io/address/0xbbbbca6a901c926f240b89eacb641d8aec7aeafd", "LRC", "Loopring"], ["https://ethplorer.io/address/0x5f98805a4e8be255a32880fdec7f6728c6568ba0", "LUSD", "Liquity USD"], ["https://ethplorer.io/address/0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2", "MKR", "Maker"], ["https://etherscan.io/address/0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0", "Matic", "Polygon"], ["https://etherscan.io/token/0x9e32b13ce7f2e80a01932b42553652e053d6ed8e", "Metis", "Metis"], ["https://ethplorer.io/address/0xd7c49cee7e9188cca6ad8ff264c1da2e69d4cf3b", "NXM", "Nexus Mutual"], ["https://etherscan.io/token/0x64aa3364f17a4d01c6f1751fd97c2bd3d7e7f1d5", "OHM", "Olympus"], ["https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000042", "OP", "Optimism"], ["https://etherscan.io/address/0x519C1001D550C0a1DaE7d1fC220f7d14c2A521BB", "PSWAP", "Polkaswap"], ["https://polygonscan.com/token/0xb5c064f955d8e7f38fe0460c556a72987494ee17", "QUICK", "Quickswap"], ["https://etherscan.io/address/0x6123b0049f904d730db3c36a31167d9d4121fa6b", "RBN", "Ribbon Finance"], ["https://etherscan.io/address/0xd33526068d116ce69f19a9ee46f0bd304f21a51f", "RPL", "Rocket Pool"], ["https://etherscan.io/token/0x320623b8e4ff03373931769a31fc52a4e78b5d70", "RSR", "Reserve Rights Token"], ["https://bscscan.com/address/0xd41fdb03ba84762dd66a0af1a6c8540ff1ba5dfb", "SFP", "SafePal"], ["https://etherscan.io/token/0x00c83aecc790e8a4453e5dd3b0b4b3680501a7a7", "SKL", "SKALE"], ["https://etherscan.io/token/0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f", "SNX", "Synthetix Network Token"], ["https://ftmscan.com/token/0x5cc61a78f164885776aa610fb0fe1257df78e59b", "SPIRIT", "SpiritSwap"], ["https://etherscan.io/token/0xaf5191b0de278c7286d6c7cc6ab6bb8a73ba2cd6", "STG", "Stargate Finance"], ["https://ethplorer.io/address/0xcb86c6a22cb56b6cf40cafedb06ba0df188a416e", "SURE", "inSure DeFi"], ["https://etherscan.io/address/0x6b3595068778dd592e39a122f4f5a5cf09c90fe2", "SUSHI", "Sushi"], ["https://bscscan.com/address/0x4b0f1812e5df2a09796481ff14017e6005508003", "TWT", "Trust Wallet "], ["https://etherscan.io/token/0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828", "UMA", "UMA"], ["https://etherscan.io/address/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984", "UNI", "Uniswap"], ["https://optimistic.etherscan.io/address/0x3c8b650257cfb5f272f799f5e2b4e65093a11a05", "VELO", "Velo"], ["https://etherscan.io/token/0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e", "YFI", "yearn.finance"], ["https://etherscan.io/address/0xe41d2489571d322189246dafa5ebde1f4699f498", "ZRX", "0x"], ["https://etherscan.io/token/0xBC6DA0FE9aD5f3b0d58160288917AA56653660E9", "alUSD", "Alchemix USD"], ["https://etherscan.io/address/0xae7ab96520de3a18e5e111b5eaab095312d7fe84", "stETH", "Lido Staked Ether"], ["https://etherscan.io/address/0x8798249c2e607446efb7ad49ec89dd1865ff4272", "xSUSHI", "xSUSHI"]]
 
+                        var tokenList = document.querySelector('#firstDefiListInsertion');
                         tokens.forEach(function(token) {
                             var row = document.createElement('tr');
                             row.className = "tokenListData";
@@ -1151,7 +1153,7 @@
                             link.innerHTML = token[2] + ": <b>$" + token[1] + "</b>";
                             cell.appendChild(link);
                             row.appendChild(cell);
-                            document.querySelector('.airdrop-recipients tbody').appendChild(row);
+                            tokenList.parentNode.insertBefore(row, tokenList.nextSibling);
                         });
                     </script>
 
@@ -1197,10 +1199,11 @@
                         <td>20,000</td>
                         <td>Github</td>
                     </tr>
-                    <tr>
+                    <tr id="secondRepoListInsertion">
                         <td colspan="3" style="text-decoration: underline; text-align:center; cursor: pointer;" class="viewRepos secondGithubList">View Eligible Orgs & Repositories List</td>
                     </tr>
                     <script>
+                        var tokenList = document.querySelector('#secondRepoListInsertion');
                         repos.forEach(function(repo) {
                             var row = document.createElement('tr');
                             row.className = "secondRepoListData";
@@ -1218,7 +1221,7 @@
                             link.appendChild(code);
                             cell.appendChild(link);
                             row.appendChild(cell);
-                            document.querySelector('.expanded-airdrop-recipients tbody').appendChild(row);
+                            tokenList.parentNode.insertBefore(row, tokenList.nextSibling);
                         });
                     </script>
                     <tr>
@@ -1226,10 +1229,11 @@
                         <td>14,000</td>
                         <td>Ethereum</td>
                     </tr>
-                    <tr>
+                    <tr id="secondDefiListInsertion">
                         <td colspan="3" style="text-decoration: underline; text-align:center; cursor: pointer;" class="viewDefiTokens secondList">View Eligible DeFi Tokens</td>
                     </tr>
                     <script>
+                        var tokenList = document.querySelector('#secondDefiListInsertion');
                         tokens.forEach(function(token) {
                             var row = document.createElement('tr');
                             row.className = "secondTokenListData";
@@ -1243,9 +1247,10 @@
                             link.innerHTML = token[2] + ": <b>$" + token[1] + "</b>";
                             cell.appendChild(link);
                             row.appendChild(cell);
-                            document.querySelector('.expanded-airdrop-recipients tbody').appendChild(row);
+                            tokenList.parentNode.insertBefore(row, tokenList.nextSibling);
                         });
                     </script>
+
                     <tr>
                         <td><strong>Farcaster Verified Addresses</strong><br /></td>
                         <td>7,848</td>
